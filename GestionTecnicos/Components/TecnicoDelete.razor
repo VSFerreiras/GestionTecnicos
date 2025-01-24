@@ -40,6 +40,9 @@
 
 
 @code {
+    [Parameter]
+    public int TecnicoId { get; set; }
+
     private string Error { get; set; } = string.Empty;
     private string Saved { get; set; } = string.Empty;
     private Tecnicos Tecnico {get; set;}= new Tecnicos();
