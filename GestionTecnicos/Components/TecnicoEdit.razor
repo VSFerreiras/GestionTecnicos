@@ -1,102 +1,108 @@
 ﻿@page "/Edit/{TecnicoId:int}"
-@inject TecnicosService TecnicosService
+@inject TecnicosService tecnicosService
 @inject NavigationManager navigationManager
-
+@rendermode InteractiveServer
 
 @*HTML*@
 <PageTitle>Editar</PageTitle>
 <EditForm Model="Tecnico" OnValidSubmit="Guardar">
-    <DataAnnotationsValidator />
+	<DataAnnotationsValidator />
 
-    <div class="container">
-        <div class="card shadow-lg"
-            <div class="card-header text-center">
-                <h5 class="card-title">Editar Tecnico</h5>
-            </div>
+	<div class="container">
+		<div class="card shadow-lg">
+			<div class="card-header text-center">
+				<h5 class="card-title">Registro de Tecnicos</h5>
+			</div>
 
-            <div class="card-body ">
+			<div class="card-body">
 
-                @*TecnicoId*@
-                <div class="mb-3">
-                    <label class="form-label"><strong>TecnicoId</strong></label>
-                    <InputNumber class="form-control" @bind-Value="Tecnico.TecnicoId" readonly></InputNumber>
-                </div>
+				@*TecnicoId*@
+				<div class="mb-3">
+					<label class="form-label"><strong>TecnicoId</strong></label>
+					<InputNumber class="form-control" @bind-Value="Tecnico.TecnicoId" readonly></InputNumber>
+				</div>
 
-                @*Nombres*@
-                <div class="mb-3">
-                    <label class="form-label"><strong>Nombres</strong></label>
-                    <InputText class="form-control" @bind-Value="Tecnico.Nombres"/>
-                    <ValidationMessage For="@(() => Tecnico.Nombres)"/>
-                </div>
+				@*Nombre*@
+				<div class="mb-3">
+					<label class="form-label"><strong>Nombres</strong></label>
+					<InputText class="form-control" @bind-Value="Tecnico.Nombres"></InputText>
+					<ValidationMessage For="(() => Tecnico.Nombres)" />
+				</div>
 
-                @*SueldoHora*@
-                <div class="mb-3">
-                    <label class="form-label"><strong>SueldoHora</strong></label>
-                    <InputNumber class="form-control" @bind-Value="Tecnico.SueldoHora"/>
-                    <ValidationMessage For="@(() => Tecnico.SueldoHora)"/>
-                </div>
-            </div>
+				@*SueldoHora*@
+				<div class="mb-3">
+					<label class="form-label"><strong>Sueldo por Hora</strong></label>
+					<InputNumber class="form-control" @bind-Value="Tecnico.SueldoHora"></InputNumber>
+					<ValidationMessage For="(() => Tecnico.SueldoHora)" />
+				</div>
 
-            @*Footer*@
-            <div class="card-footer text-center mt-2">
-                <a href="/" class="btn btn-secondary"> <span class="bi bi-arrow-left"></span>Volver</a>
-                <button type="submit" class="btn btn-primary bi bi-floppy"> Guardar </button>
-                <button type="submit" class="btn btn-outline-success" @onclick="Nuevo">Nuevo</button>            
-            </div>
-        </div>
-    </div>
-    @* Notificaciones *@
-    <label style="color:green;" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
-    <label style="color:red;" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
+			</div>
+
+			@*Footer*@
+			<div class="card-footer text-center mt-2">
+				<a href="/" class="btn btn-secondary"><span class="bi bi-arrow-left"></span>Volver</a>
+				<button type="submit" class="btn btn-primary bi bi-floppy">Guardar</button>
+			</div>
+		</div>
+	</div>
+
+    	@*Notificaciones*@
+	<label style="color:red;" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
+	<label style="color:green;" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
 </EditForm>
 
-
-
 @code {
-    [Parameter]
-     public int TecnicoId { get; set; }
-    private string Error { get; set; } = string.Empty;
-    private string Saved { get; set; } = string.Empty;
-    private Tecnicos Tecnico {get; set;}= new Tecnicos();
-     protected override async Task OnInitializedAsync() {
-        Tecnico = await TecnicosService.Buscar(TecnicoId);
-    }
-    public void Nuevo(){
-        this.Tecnico = new Tecnicos();
-    }
+	[Parameter]
+	public int TecnicoId { get; set; }
 
-    private async Task<bool> Validar()
+	private Tecnicos Tecnico { get; set; } = new Tecnicos();
+	public List<Tecnicos> ListaTecnicos { get; set; } = new List<Tecnicos>();
+	private string Error { get; set; } = string.Empty;
+	private string Saved { get; set; } = string.Empty;
+
+	protected override async Task OnInitializedAsync()
+	{
+		Tecnico = await tecnicosService.Buscar(TecnicoId);
+		ListaTecnicos = await tecnicosService.Listar(t => t.TecnicoId > 0);
+
+	}
+
+private async Task<bool> Validar()
+{
+    Error = string.Empty;
+
+    var TecnicosMismoNombre = ListaTecnicos
+        .FirstOrDefault(t => t.Nombres == Tecnico.Nombres && t.TecnicoId != Tecnico.TecnicoId);
+
+    if (TecnicosMismoNombre != null)
     {
-        Error = string.Empty;
-
-        if (await TecnicosService.ExisteNombre(Tecnico.Nombres))
-        {
-            return false;
-        }
-        return true;
-    }
-    public async Task Guardar()
-    {
-        Error = string.Empty;
-        Saved = string.Empty;
-
-        if (!await Validar())
-        {
-            Error = "No puede haber dos técnicos con el mismo nombre";
-            return;
-        }
-        var guardo = await TecnicosService.Guardar(this.Tecnico);
-        if (guardo != null)
-        {
-            Error = "Tecnico Guardado Exitosamente";
-            navigationManager.NavigateTo("/");
-        }
-        else
-        {
-            Error = "Error al guardar el Registro";
-        }
-
+        Error = "Ya existe otro tecnico con este nombre";
+        return false;
     }
 
+    return true;
+}
+
+	public async Task Guardar()
+	{
+		Error = string.Empty;
+		Saved = string.Empty;
+
+		if (!await Validar())
+		{
+			Error = "Ya existe un tecnico con este nombre";
+			return;
+		}
+		var guardo = await tecnicosService.Guardar(this.Tecnico);
+		if (guardo != null)
+		{
+			Saved = "Tecnico Modificado Correctamente";
+		}
+		else
+		{
+			Error = "Error al modificar el Registro";
+		}
+
+	}
 
 }
