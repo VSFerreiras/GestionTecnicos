@@ -41,8 +41,8 @@
             <div class="card-footer text-center mt-2">
                 <a href="/Tecnico/Index" class="btn btn-secondary"> <span class="bi bi-arrow-left"></span>Volver</a>
                 <button type="submit" class="btn btn-primary bi bi-floppy"> Guardar </button>
+                <button type="submit" class="btn btn-outline-success" @onclick="Nuevo">Nuevo</button>            
             </div>
-
         </div>
     </div>
     @* Notificaciones *@
@@ -82,7 +82,6 @@
         var guardo = await TecnicosService.Guardar(this.Tecnico);
         if(guardo!=null){
             Error = "Tecnico Guardado Exitosamente";
-            Nuevo();
             navigationManager.NavigateTo("/Tecnico");
         }else{
             Error = "Error al guardar el Registro";
