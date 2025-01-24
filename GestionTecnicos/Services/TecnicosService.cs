@@ -25,7 +25,12 @@ public class TecnicosService(IDbContextFactory<Contexto> DbFactory){
     return await contexto.SaveChangesAsync() > 0;
 
    }
-   private async Task<bool> Insertar(Tecnicos tecnico){
+    public async Task<bool> ExisteNombre(string Nombres)
+    {
+        await using var contexto = await DbFactory.CreateDbContextAsync();
+        return await contexto.Tecnicos.AnyAsync(t => t.Nombres.ToLower() == Nombres.ToLower());
+    }
+    private async Task<bool> Insertar(Tecnicos tecnico){
     await using var contexto = await DbFactory.CreateDbContextAsync();
     contexto.Tecnicos.Add(tecnico);
     return await contexto.SaveChangesAsync() > 0;
