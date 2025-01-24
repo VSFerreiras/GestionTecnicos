@@ -56,6 +56,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9fSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionTecnicos/Pages/TecnicoCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGVjbmljb0NyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionTecnicos/Pages/TecnicoEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGVjbmljb0VkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionTecnicos/Pages/TecnicoIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVGVjbmljb0luZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionTecnicos/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-gx7aeces0q
