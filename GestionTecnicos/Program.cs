@@ -1,5 +1,6 @@
 using GestionTecnicos.Components;
 using GestionTecnicos.DAL;
+using GestionTecnicos.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,8 @@ builder.Services.AddRazorComponents()
 
 var ConStr = builder.Configuration.GetConnectionString("SqlConstr");
 builder.Services.AddDbContextFactory<Contexto>(o=> o.UseSqlServer(ConStr));
+
+builder.Services.AddScoped<TecnicosService>();
 
 var app = builder.Build();
 
