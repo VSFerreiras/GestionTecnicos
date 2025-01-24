@@ -81,8 +81,7 @@
         }
         var guardo = await TecnicosService.Guardar(this.Tecnico);
         if(guardo!=null){
-            Error = "Tecnico Guardado Exitosamente";
-            navigationManager.NavigateTo("/");
+            Saved = "Tecnico Guardado Exitosamente";
         }else{
             Error = "Error al guardar el Registro";
         }
