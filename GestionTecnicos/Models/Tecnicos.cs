@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GestionTecnicos.Models;
 
-public class Tecnico{
+public class Tecnicos{
 
     [Key]
     
