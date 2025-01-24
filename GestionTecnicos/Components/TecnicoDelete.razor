@@ -1,4 +1,4 @@
-﻿@page "/Tecnico/Delete/{TecnicoId:int}"
+﻿@page "/Delete/{TecnicoId:int}"
 @inject TecnicosService TecnicosService
 @rendermode InteractiveServer
 @inject NavigationManager navigationManager
@@ -54,7 +54,7 @@
         var eliminado = await TecnicosService.Eliminar(Tecnico.TecnicoId);
         if(eliminado!=null){
             Error = "Tecnico Guardado Exitosamente";
-            navigationManager.NavigateTo("/Tecnico");
+            navigationManager.NavigateTo("/");
         }else{
             Error = "Error al eliminar el Registro";
         }
