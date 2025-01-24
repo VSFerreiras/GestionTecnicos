@@ -1,4 +1,4 @@
-﻿@page "/Tecnico/Edit/{TecnicoId:int}"
+﻿@page "/Edit/{TecnicoId:int}"
 @inject TecnicosService TecnicosService
 @inject NavigationManager navigationManager
 
@@ -89,7 +89,7 @@
         if (guardo != null)
         {
             Error = "Tecnico Guardado Exitosamente";
-            navigationManager.NavigateTo("/Tecnico");
+            navigationManager.NavigateTo("/");
         }
         else
         {
