@@ -1,4 +1,4 @@
-﻿@page "/Tecnico/Create"
+﻿@page "/Create"
 @inject TecnicosService TecnicosService
 @rendermode InteractiveServer
 @inject NavigationManager navigationManager
@@ -82,7 +82,7 @@
         var guardo = await TecnicosService.Guardar(this.Tecnico);
         if(guardo!=null){
             Error = "Tecnico Guardado Exitosamente";
-            navigationManager.NavigateTo("/Tecnico");
+            navigationManager.NavigateTo("/");
         }else{
             Error = "Error al guardar el Registro";
         }
