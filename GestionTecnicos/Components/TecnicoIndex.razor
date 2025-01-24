@@ -10,7 +10,7 @@
     <div class="card shadow-lg">
         <div class="card-header space-between">
             <h5 class="card-title">Registro de Tecnicos</h5>
-            <a href="/Tecnico/Create" class="btn btn-primary"> <span class="bi bi-plus-square mt-3"></span> Crear</a>
+            <a href="/Create" class="btn btn-primary"> <span class="bi bi-plus-square mt-3"></span> Crear</a>
         </div>
 
         <div class="card-body">
@@ -69,10 +69,10 @@
                             <td> @tecnico.SueldoHora.ToString("N2")</td>
 
                             <td>
-                                <a href="/Tecnico/Edit/@tecnico.TecnicoId" class="btn btn-outline-primary bi bi-pencil-square"></a>
+                                <a href="/Edit/@tecnico.TecnicoId" class="btn btn-outline-primary bi bi-pencil-square"></a>
                             </td>
                             <td>
-                                <a href="/Tecnico/Eliminar/@tecnico.TecnicoId" class="btn btn-outline-danger bi bi-trash"></a>
+                                <a href="/Eliminar/@tecnico.TecnicoId" class="btn btn-outline-danger bi bi-trash"></a>
                             </td>
                         </tr>
                     }
