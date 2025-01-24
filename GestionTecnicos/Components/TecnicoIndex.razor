@@ -115,10 +115,4 @@
         StateHasChanged();
 
     }
-    private async Task Restablecer()
-    {
-        ListaTecnicos = await tecnicosService.Listar(t => t.TecnicoId > 0);
-        Filtro = string.Empty;
-        ValorFiltro = string.Empty;
-    }
 }
