@@ -56,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9UZWNuaWNvQ3JlYXRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionTecnicos/Components/TecnicoDelete.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9UZWNuaWNvRGVsZXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionTecnicos/Components/TecnicoEdit.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9UZWNuaWNvRWRpdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,65 @@
+﻿@page "/Tecnico/Delete/{TecnicoId:int}"
+@inject TecnicosService TecnicosService
+@rendermode InteractiveServer
+@inject NavigationManager navigationManager
+
+@*HTML*@
+<PageTitle>Eliminar</PageTitle>
+<EditForm Model="Tecnico" OnValidSubmit="Eliminar">
+    <DataAnnotationsValidator />
+
+    <div class="container">
+        <div class="card shadow-lg"
+            <div class="card-header text-center">
+                <h5 class="card-title">Eliminar t&eacute</h5>
+            </div>
+
+            <div class="card-body ">
+                <div class="text-center">
+                    <h6><strong>¿Est&aacute;s seguro de que quieres eliminar a este t&eacute;cnico?</strong></h6>
+                </div>
+                <ul class="mt-4">
+                    <li><strong>TecnicoId: </strong>@Tecnico.TecnicoId</li>
+                    <li><strong>SueldoHora: </strong>@Tecnico.SueldoHora</li>
+                    <li><strong>Nombres: </strong>@Tecnico.Nombres</li>
+
+                </ul>
+            </div>
+            @*Footer*@
+            <div class="card-footer text-center mt-2">
+                <a href="/Tecnico/Index" class="btn btn-secondary"> <span class="bi bi-arrow-left"></span>Volver</a>
+                <button type="submit" class="btn btn-primary bi bi-trash"> Eliminar </button>       
+            </div>
+        </div>
+    </div>
+    @* Notificaciones *@
+    <label style="color:green;" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
+    <label style="color:red;" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
+</EditForm>
+
+
+
+@code {
+    private string Error { get; set; } = string.Empty;
+    private string Saved { get; set; } = string.Empty;
+    private Tecnicos Tecnico {get; set;}= new Tecnicos();
+
+    public void Nuevo(){
+        this.Tecnico = new Tecnicos();
+    }
+    public async Task Eliminar(){
+        Error = string.Empty;
+        Saved = string.Empty;
+
+        var eliminado = await TecnicosService.Eliminar(Tecnico.TecnicoId);
+        if(eliminado!=null){
+            Error = "Tecnico Guardado Exitosamente";
+            navigationManager.NavigateTo("/Tecnico");
+        }else{
+            Error = "Error al eliminar el Registro";
+        }
+    
+        Nuevo();
+
+    }
+}
