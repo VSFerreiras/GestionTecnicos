@@ -16,7 +16,7 @@
 
             <div class="card-body ">
                 <div class="text-center">
-                    <h6><strong>¿Est&aacute;s seguro de que quieres eliminar a este t&eacute;cnico?</strong></h6>
+                <h6 style="color: red; font-size: 2em; font-weight: normal;">¿Estás seguro de que quieres eliminar a este técnico?</h6>
                 </div>
                 <ul class="mt-4">
                     <li><strong>TecnicoId: </strong>@Tecnico.TecnicoId</li>
@@ -28,7 +28,7 @@
             @*Footer*@
             <div class="card-footer text-center mt-2">
                 <a href="/" class="btn btn-secondary"> <span class="bi bi-arrow-left"></span>Volver</a>
-                <button type="submit" class="btn btn-primary bi bi-trash"> Eliminar </button>       
+                <button type="submit" class="btn btn-danger bi bi-trash"> Eliminar </button>       
             </div>
         </div>
     </div>
@@ -47,6 +47,10 @@
     private string Saved { get; set; } = string.Empty;
     private Tecnicos Tecnico {get; set;}= new Tecnicos();
 
+    protected override async Task OnInitializedAsync()
+    {   
+    Tecnico = await TecnicosService.Buscar(TecnicoId);
+    }
     public void Nuevo(){
         this.Tecnico = new Tecnicos();
     }
