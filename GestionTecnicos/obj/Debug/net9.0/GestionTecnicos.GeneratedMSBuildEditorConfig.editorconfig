@@ -32,24 +32,24 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/Components/Pages/ClienteCreate.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlQ3JlYXRlLnJhem9y
+[/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/Components/ClienteCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9DbGllbnRlQ3JlYXRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/Components/Pages/ClienteDelete.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlRGVsZXRlLnJhem9y
+[/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/Components/ClienteDelete.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9DbGllbnRlRGVsZXRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/Components/Pages/ClienteEdit.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlRWRpdC5yYXpvcg==
+[/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/Components/ClienteEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9DbGllbnRlRWRpdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/Components/Pages/ClienteIndex.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlSW5kZXgucmF6b3I=
+[/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/Components/ClienteIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9DbGllbnRlSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/Components/Pages/Error.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FcnJvci5yYXpvcg==
+[/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/Components/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9FcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/Components/Routes.razor]
