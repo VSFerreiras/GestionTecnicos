@@ -426,3 +426,13 @@
 /home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.pdb
 /home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.genruntimeconfig.cache
 /home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/obj/Debug/net9.0/ref/GestionTecnicos.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.csproj.AssemblyReference.cache
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.GeneratedMSBuildEditorConfig.editorconfig
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.AssemblyInfoInputs.cache
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.AssemblyInfo.cs
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.csproj.CoreCompileInputs.cache
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.MvcApplicationPartsAssemblyInfo.cache
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.sourcelink.json
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/refint/GestionTecnicos.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.pdb

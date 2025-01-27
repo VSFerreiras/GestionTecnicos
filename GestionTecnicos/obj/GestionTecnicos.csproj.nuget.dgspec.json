@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/GestionTecnicos.csproj": {}
+    "/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/GestionTecnicos.csproj": {}
   },
   "projects": {
-    "/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/GestionTecnicos.csproj": {
+    "/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/GestionTecnicos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/GestionTecnicos.csproj",
+        "projectUniqueName": "/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/GestionTecnicos.csproj",
         "projectName": "GestionTecnicos",
-        "projectPath": "/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/GestionTecnicos.csproj",
+        "projectPath": "/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/GestionTecnicos.csproj",
         "packagesPath": "/home/victor/.nuget/packages/",
-        "outputPath": "/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/obj/",
+        "outputPath": "/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/victor/.nuget/NuGet/NuGet.Config"

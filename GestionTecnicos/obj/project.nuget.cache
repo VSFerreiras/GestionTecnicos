@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qmbHzH5CIuI=",
+  "dgSpecHash": "ZyafGaUz6uA=",
   "success": true,
-  "projectFilePath": "/home/victor/Documents/UCNE/2025-01/Programación Aplicada I/GestionClientes/GestionTecnicos/GestionTecnicos.csproj",
+  "projectFilePath": "/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/GestionTecnicos.csproj",
   "expectedPackageFiles": [
     "/home/victor/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/home/victor/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
