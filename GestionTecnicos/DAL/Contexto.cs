@@ -10,4 +10,6 @@ public class Contexto : DbContext{
     public DbSet<Clientes> Clientes { get; set; }
     
     public DbSet<Ciudades> Ciudades { get; set; }
+    
+    public DbSet<Tickets> Tickets { get; set; }
 }
