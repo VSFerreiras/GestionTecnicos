@@ -10,6 +10,8 @@ public class Clientes{
     
     public int TecnicoId { get; set; }
     
+    public int CiudadId { get; set; }
+    
     public DateTime FechaIngreso { get; set; } = DateTime.Now;
 
     [Required(ErrorMessage = "Este campo es requerido")]
