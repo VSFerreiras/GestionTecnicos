@@ -27,5 +27,8 @@ public class Clientes{
 
     [ForeignKey("TecnicoId")] 
     public Tecnicos Tecnico { get; set; } = null!;
+    
+    [ForeignKey("CiudadId")]
+    public Ciudades Ciudad { get; set; } = null!;
 
 }
