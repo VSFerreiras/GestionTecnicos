@@ -47,7 +47,7 @@
 @code {
     private string Error { get; set; } = string.Empty;
     private string Saved { get; set; } = string.Empty;
-    private Ciudades Ciudad { get; set; }
+    private Ciudades Ciudad { get; set; } = new Ciudades();
     
     public void Nuevo() {
         this.Ciudad = new Ciudades();
