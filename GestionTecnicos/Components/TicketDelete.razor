@@ -1,0 +1,73 @@
+@page "/Ticket/Delete/{TicketId:int}"
+@inject TicketsService TicketsServices
+@inject NavigationManager navigationManager
+@rendermode InteractiveServer
+
+<PageTitle>Eliminar Ticket</PageTitle>
+<EditForm Model="Ticket" OnValidSubmit="Eliminar">
+    <DataAnnotationsValidator />
+
+    <div class="container">
+        <div class="card shadow-lg">
+            <div class="card-header text-center">
+                <h5 class="card-title">Eliminar Ticket</h5>
+            </div>
+
+            <div class="card-body">
+                <div class="text-center">
+                    <h6 style="color: red; font-size: 2em; font-weight: normal;">¿Estás seguro de que quieres eliminar este ticket?</h6>
+                </div>
+                <ul class="mt-4">
+                    <li><strong>TicketId: </strong>@Ticket.TicketId</li>
+                    <li><strong>Cliente: </strong>@Ticket.Cliente?.Nombres</li>
+                    <li><strong>Técnico Encargado: </strong>@Ticket.Cliente?.Tecnico?.Nombres</li>
+                    <li><strong>Asunto: </strong>@Ticket.Asunto</li>
+                    <li><strong>Descripción: </strong>@Ticket.Descripcion</li>
+                    <li><strong>Fecha de Ticket: </strong>@Ticket.Fecha</li>
+                    <li><strong>Tiempo invertido: </strong>@Ticket.TiempoInvertido horas</li>
+                </ul>
+            </div>
+
+            @* Footer *@
+            <div class="card-footer text-center mt-2">
+                <a href="/Ticket" class="btn btn-secondary"> <span class="bi bi-arrow-left"></span> Volver</a>
+                <button type="submit" class="btn btn-danger bi bi-trash"> Eliminar </button>
+            </div>
+        </div>
+    </div>
+
+    @* Notificaciones *@
+    <label style="color:green;" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
+    <label style="color:red;" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int TicketId { get; set; }
+
+    private string Error { get; set; } = string.Empty;
+    private string Saved { get; set; } = string.Empty;
+    public Tickets Ticket { get; set; } = new Tickets();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Ticket = await TicketsServices.Buscar(TicketId);
+    }
+
+    public async Task Eliminar()
+    {
+        Error = string.Empty;
+        Saved = string.Empty;
+
+        var eliminado = await TicketsServices.Eliminar(Ticket.TicketId);
+        if (eliminado)
+        {
+            Saved = "Ticket Eliminado Exitosamente";
+            navigationManager.NavigateTo("/Ticket");
+        }
+        else
+        {
+            Error = "Error al eliminar el Ticket";
+        }
+    }
+}
