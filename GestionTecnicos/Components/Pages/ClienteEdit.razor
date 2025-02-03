@@ -1,6 +1,7 @@
 @page "/Cliente/Edit/{ClienteId:int}"
 @inject ClientesService ClientesService
 @inject TecnicosService TecnicosService
+@inject CiudadesService CiudadesServices
 @inject NavigationManager navigationManager
 @rendermode InteractiveServer
 
@@ -34,6 +35,13 @@
                 <div class="mb-3">
                     <label class="form-label"><strong>Dirección</strong></label>
                     <InputText class="form-control" @bind-Value="Cliente.Direccion" />
+                    <InputSelect class="form-control form-select" @bind-Value ="@Cliente.CiudadId">
+                        <option value="0" selected disabled>Seleccione una Ciudad</option>
+                        @foreach (var ciudad in ListaCiudades)
+                        {
+                            <option value="@ciudad.CiudadId">@ciudad.CiudadNombre</option>
+                        }
+                    </InputSelect>
                 </div>
 
                 @*Fecha de Ingreso*@
@@ -88,12 +96,14 @@
 
     private Clientes Cliente { get; set; } = new Clientes();
     public List<Tecnicos> ListaTecnicos { get; set; } = new List<Tecnicos>();
+    public List<Ciudades> ListaCiudades { get; set; } = new List<Ciudades>();
     private string Error { get; set; } = string.Empty;
     private string Saved { get; set; } = string.Empty;
     protected override async Task OnInitializedAsync()
     {
         Cliente = await ClientesService.Buscar(ClienteId);
         ListaTecnicos = await TecnicosService.Listar(t => t.TecnicoId > 0);
+        ListaCiudades = await CiudadesServices.Listar(c => c.CiudadId > 0);
     }
 
     private async Task Modificar()

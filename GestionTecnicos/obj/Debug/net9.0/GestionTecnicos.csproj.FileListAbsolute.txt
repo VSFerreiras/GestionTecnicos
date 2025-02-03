@@ -437,7 +437,6 @@
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/refint/GestionTecnicos.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.pdb
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/appsettings.Development.json
-/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/appsettings.json
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/GestionTecnicos.staticwebassets.runtime.json
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/GestionTecnicos.staticwebassets.endpoints.json
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/GestionTecnicos
@@ -462,16 +461,7 @@
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Design.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Relational.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.SqlServer.dll
-/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.Caching.Abstractions.dll
-/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.Caching.Memory.dll
-/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll
-/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.dll
-/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.DependencyModel.dll
-/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.Logging.dll
-/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
-/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.Options.dll
-/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.Primitives.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Identity.Client.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Identity.Client.Extensions.Msal.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
@@ -492,13 +482,11 @@
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/System.Composition.TypedParts.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/System.Configuration.ConfigurationManager.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/System.Drawing.Common.dll
-/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/System.Formats.Asn1.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/System.Memory.Data.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/System.Runtime.Caching.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/System.Security.Cryptography.ProtectedData.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/System.Security.Permissions.dll
-/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/System.Text.Json.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/System.Windows.Extensions.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/cs/Microsoft.CodeAnalysis.resources.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/de/Microsoft.CodeAnalysis.resources.dll
@@ -640,3 +628,4 @@
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionT.AADFD7B6.Up2Date
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.genruntimeconfig.cache
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/ref/GestionTecnicos.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/appsettings.json

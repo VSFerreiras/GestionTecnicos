@@ -12,5 +12,7 @@ public class Ciudades
     public string CiudadNombre { get; set; } = null!;
     
     [ForeignKey("ClienteId")] 
+    public int ClienteId { get; set; }
     public Clientes Cliente { get; set; } = null!;
+
 }

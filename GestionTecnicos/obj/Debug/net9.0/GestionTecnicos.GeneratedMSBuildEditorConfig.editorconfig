@@ -32,6 +32,22 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/CiudadCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWRDcmVhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/CiudadDelete.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWREZWxldGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/CiudadEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWRFZGl0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/CiudadIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWRJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/ClienteCreate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlQ3JlYXRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
