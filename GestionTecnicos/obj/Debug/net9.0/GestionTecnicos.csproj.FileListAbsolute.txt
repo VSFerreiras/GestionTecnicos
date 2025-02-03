@@ -437,7 +437,6 @@
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/refint/GestionTecnicos.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.pdb
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/appsettings.Development.json
-/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/appsettings.json
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/GestionTecnicos.staticwebassets.runtime.json
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/GestionTecnicos.staticwebassets.endpoints.json
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/GestionTecnicos
@@ -629,3 +628,4 @@
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionT.AADFD7B6.Up2Date
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.genruntimeconfig.cache
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/ref/GestionTecnicos.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/appsettings.json
