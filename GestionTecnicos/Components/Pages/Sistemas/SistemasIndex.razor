@@ -1,0 +1,111 @@
+@page "/Sistema"
+@inject SistemasService sistemaService
+@inject NavigationManager navigationManager
+@rendermode InteractiveServer
+
+@* HTML *@
+<PageTitle>Registro de Sistemas</PageTitle>
+<div class="container">
+    <div class="card shadow-lg">
+        <div class="card-header space-between">
+            <h5 class="card-title">Registro de Sistemas</h5>
+            <a href="/Sistema/Create" class="btn btn-success">
+                <span class="bi bi-plus-square"></span> Crear
+            </a>
+        </div>
+
+        <div class="card-body">
+            @* Etiquetas *@
+            <div class="row">
+                <div class="col-3">
+                    <label class="col-form-label"><strong>Filtrar por</strong></label>
+                </div>
+
+                <div class="col-4">
+                    <label class="col-form-label"><strong>Búsqueda</strong></label>
+                </div>
+            </div>
+
+            @* Inputs y botones *@
+            <div class="row align-items-center">
+                <div class="col-3">
+                    <InputSelect class="form-select" @bind-Value="Filtro">
+                        <option value="" selected disabled>Elija una opción</option>
+                        <option value="SistemaId">SistemaId</option>
+                    </InputSelect>
+                </div>
+
+                <div class="col-4">
+                    <div class="input-group">
+                        <input class="form-control" @bind="ValorFiltro" placeholder="Buscar"/>
+                        <button type="button" class="btn btn-outline-primary bi bi-search" @onclick="Buscar"></button>
+                    </div>
+                </div>
+
+                <div class="col-auto">
+                    <button type="button" class="btn btn-outline-secondary bi bi-arrow-clockwise" @onclick="Restablecer"></button>
+                </div>
+            </div>
+
+            @* Tabla *@
+            <table class="table table-hover">
+                <thead class="table table-striped text-black">
+                <tr>
+                    <th>SistemaId</th>
+                    <th>Descripción</th>
+                    <th>Complejidad</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var sistema in ListaSistemas)
+                {
+                    <tr>
+                        <td>@sistema.SistemaId</td>
+                        <td>@sistema.Descripcion</td>
+                        <td>@sistema.Complejidad</td>
+                        <td class="text-center">
+                            <a class="btn btn-outline-primary bi bi-pencil-square" href="/Sistema/Edit/@sistema.SistemaId"></a>
+                        </td>
+                        <td>
+                            <a class="btn btn-outline-danger bi bi-trash" href="/Sistema/Delete/@sistema.SistemaId"></a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@code {
+    public List<Sistemas> ListaSistemas { get; set; } = new List<Sistemas>();
+    public string Filtro { get; set; } = string.Empty;
+    public string ValorFiltro { get; set; } = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        ListaSistemas = await sistemaService.Listar(s => s.SistemaId > 0);
+    }
+
+    private async Task Buscar()
+    {
+        if (Filtro == "SistemaId")
+        {
+            if (int.TryParse(ValorFiltro, out int sistemaId))
+            {
+                ListaSistemas = await sistemaService.Listar(s => s.SistemaId == sistemaId);
+            }
+        }
+
+        StateHasChanged();
+    }
+
+    private async Task Restablecer()
+    {
+        ListaSistemas = await sistemaService.Listar(s => s.SistemaId > 0);
+        Filtro = string.Empty;
+        ValorFiltro = string.Empty;
+    }
+}
