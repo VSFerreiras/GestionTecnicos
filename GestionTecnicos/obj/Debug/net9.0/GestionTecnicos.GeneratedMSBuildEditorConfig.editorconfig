@@ -32,76 +32,92 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/CiudadCreate.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWRDcmVhdGUucmF6b3I=
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Ciudades/CiudadCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWRlcy9DaXVkYWRDcmVhdGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/CiudadDelete.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWREZWxldGUucmF6b3I=
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Ciudades/CiudadDelete.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWRlcy9DaXVkYWREZWxldGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/CiudadEdit.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWRFZGl0LnJhem9y
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Ciudades/CiudadEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWRlcy9DaXVkYWRFZGl0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/CiudadIndex.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWRJbmRleC5yYXpvcg==
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Ciudades/CiudadIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWRlcy9DaXVkYWRJbmRleC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/ClienteCreate.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlQ3JlYXRlLnJhem9y
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Clientes/ClienteCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlcy9DbGllbnRlQ3JlYXRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/ClienteDelete.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlRGVsZXRlLnJhem9y
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Clientes/ClienteDelete.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlcy9DbGllbnRlRGVsZXRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/ClienteEdit.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlRWRpdC5yYXpvcg==
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Clientes/ClienteEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlcy9DbGllbnRlRWRpdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/ClienteIndex.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlSW5kZXgucmF6b3I=
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Clientes/ClienteIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlcy9DbGllbnRlSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/TicketCreate.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UaWNrZXRDcmVhdGUucmF6b3I=
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Sistemas/SistemasCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9TaXN0ZW1hcy9TaXN0ZW1hc0NyZWF0ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/TicketEdit.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UaWNrZXRFZGl0LnJhem9y
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Sistemas/SistemasDelete.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9TaXN0ZW1hcy9TaXN0ZW1hc0RlbGV0ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/TicketIndex.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UaWNrZXRJbmRleC5yYXpvcg==
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Sistemas/SistemasEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9TaXN0ZW1hcy9TaXN0ZW1hc0VkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Sistemas/SistemasIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9TaXN0ZW1hcy9TaXN0ZW1hc0luZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tecnicos/TecnicoCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UZWNuaWNvcy9UZWNuaWNvQ3JlYXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tecnicos/TecnicoDelete.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UZWNuaWNvcy9UZWNuaWNvRGVsZXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tecnicos/TecnicoEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UZWNuaWNvcy9UZWNuaWNvRWRpdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tecnicos/TecnicoIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UZWNuaWNvcy9UZWNuaWNvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tickets/TicketCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UaWNrZXRzL1RpY2tldENyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tickets/TicketDelete.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UaWNrZXRzL1RpY2tldERlbGV0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tickets/TicketEdit.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UaWNrZXRzL1RpY2tldEVkaXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tickets/TicketIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UaWNrZXRzL1RpY2tldEluZGV4LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Sb3V0ZXMucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/TecnicoCreate.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9UZWNuaWNvQ3JlYXRlLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/TecnicoDelete.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9UZWNuaWNvRGVsZXRlLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/TecnicoEdit.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9UZWNuaWNvRWRpdC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/TecnicoIndex.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9UZWNuaWNvSW5kZXgucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/TicketDelete.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9UaWNrZXREZWxldGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/_Imports.razor]
