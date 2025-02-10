@@ -10,38 +10,39 @@
 
 	<div class="container">
 		<div class="card shadow-lg">
-			<div class="card-header text-center">
-				<h5 class="card-title">Registro de Tecnicos</h5>
+			<div class="card-header text-center bg-primary text-white m-2">
+				<h3 class="card-title">Registro de Tecnicos</h3>
 			</div>
-
 			<div class="card-body">
-
 				@*TecnicoId*@
 				<div class="mb-3">
-					<label class="form-label"><strong>TecnicoId</strong></label>
-					<InputNumber class="form-control" @bind-Value="Tecnico.TecnicoId" readonly></InputNumber>
+					<label class="form-label">TecnicoId</label>
+					<InputNumber class="form-control small-input" @bind-Value="Tecnico.TecnicoId" readonly />
 				</div>
 
-				@*Nombre*@
+				@*Nombres*@
 				<div class="mb-3">
-					<label class="form-label"><strong>Nombres</strong></label>
-					<InputText class="form-control" @bind-Value="Tecnico.Nombres"></InputText>
-					<ValidationMessage For="(() => Tecnico.Nombres)" />
+					<label class="form-label">Nombres</label>
+					<InputText class="form-control wide-input" @bind-Value="Tecnico.Nombres"/>
+					<ValidationMessage For="@(() => Tecnico.Nombres)"/>
 				</div>
 
 				@*SueldoHora*@
 				<div class="mb-3">
-					<label class="form-label"><strong>Sueldo por Hora</strong></label>
-					<InputNumber class="form-control" @bind-Value="Tecnico.SueldoHora"></InputNumber>
-					<ValidationMessage For="(() => Tecnico.SueldoHora)" />
+					<label class="form-label">Sueldo por hora</label>
+					<InputNumber class="form-control wide-input" @bind-Value="Tecnico.SueldoHora"/>
+					<ValidationMessage For="@(() => Tecnico.SueldoHora)"/>
 				</div>
-
 			</div>
 
 			@*Footer*@
 			<div class="card-footer text-center mt-2">
-				<a href="/" class="btn btn-secondary"><span class="bi bi-arrow-left"></span>Volver</a>
-				<button type="submit" class="btn btn-primary bi bi-floppy">Guardar</button>
+				<button type="submit" class="btn btn-outline-success">
+					<span class="bi bi-check-circle-fill"></span> Guardar
+				</button>
+				<a href="/" class="btn btn-outline-danger">
+					<span class="bi bi-arrow-bar-left"></span> Retroceder
+				</a>
 			</div>
 		</div>
 	</div>
@@ -96,6 +97,7 @@ private async Task<bool> Validar()
 		var guardo = await tecnicosService.Guardar(this.Tecnico);
 		if (guardo != null)
 		{
+			navigationManager.NavigateTo("/");
 			Saved = "Tecnico Modificado Correctamente";
 		}
 		else

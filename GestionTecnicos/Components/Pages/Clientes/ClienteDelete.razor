@@ -1,7 +1,7 @@
 @page "/Cliente/Delete/{ClienteId:int}"
 @inject ClientesService ClientesService
-@rendermode InteractiveServer
 @inject NavigationManager navigationManager
+@rendermode InteractiveServer
 
 @*HTML*@
 <PageTitle>Eliminar Cliente</PageTitle>
@@ -10,35 +10,37 @@
 
     <div class="container">
         <div class="card shadow-lg">
-            <div class="card-header text-center">
-                <h5 class="card-title">Eliminar Cliente</h5>
+            <div class="card-header text-center bg-primary text-white m-2">
+                <h4 class="card-title"><strong>Eliminar Cliente</strong></h4>
             </div>
 
-            <div class="card-body ">
-                <div class="text-center">
-                    <h6 style="color: red; font-size: 2em; font-weight: normal;">¿Estás seguro de que quieres eliminar a este cliente?</h6>
+            <div class="card-body">
+                <div class="card-header bg-light">
+                    <h6 class="text-danger fs-4">¿Estás seguro de que quieres eliminar a este cliente?</h6>
                 </div>
-                <ul class="mt-4">
-                    <li><strong>ClienteId: </strong>@Cliente.ClienteId</li>
-                    <li><strong>RNC: </strong>@Cliente.Rnc</li>
-                    <li><strong>Nombres: </strong>@Cliente.Nombres</li>
-                    <li><strong>Dirección: </strong>@Cliente.Direccion , @Cliente.Ciudad?.CiudadNombre</li>
-                    <li><strong>Direccion: </strong>@Cliente.Direccion</li>
-                    <li><strong>LimiteCredito: </strong>@Cliente.LimiteCredito</li>
-                </ul>
+                <div class="card shadow-lg my-3 col-md-6">
+                    <h4 class="bg-light card-header fw-bold text-center">Datos del Cliente</h4>
+                    <ul class="px-3 pt-4 pb-5 list-unstyled">
+                        <li><strong>ClienteId: </strong>@Cliente.ClienteId</li>
+                        <li><strong>RNC: </strong>@Cliente.Rnc</li>
+                        <li><strong>Nombres: </strong>@Cliente.Nombres</li>
+                        <li><strong>Dirección: </strong>@Cliente.Direccion, @Cliente.Ciudad?.CiudadNombre</li>
+                        <li><strong>Límite de Crédito: </strong>@Cliente.LimiteCredito</li>
+                    </ul>
+                </div>
             </div>
 
             @*Footer*@
-            <div class="card-footer text-center mt-2">
-                <a href="/" class="btn btn-secondary"> <span class="bi bi-arrow-left"></span>Volver</a>
-                <button type="submit" class="btn btn-danger bi bi-trash"> Eliminar </button>
+            <div class="card-footer mt-2">
+                <button type="submit" class="btn btn-outline-danger bi bi-trash-fill"> Eliminar </button>
+                <a href="/" class="btn btn-outline-primary"> <span class="bi bi-box-arrow-left"></span> Volver</a>
             </div>
         </div>
     </div>
 
     @* Notificaciones *@
-    <label style="color:green;" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
-    <label style="color:red;" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
+    <label class="text-success" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
+    <label class="text-danger" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
 </EditForm>
 
 @code {
@@ -50,7 +52,7 @@
     private Clientes Cliente { get; set; } = new Clientes();
 
     protected override async Task OnInitializedAsync()
-    {   
+    {
         Cliente = await ClientesService.Buscar(ClienteId);
     }
 
@@ -65,7 +67,7 @@
         Saved = string.Empty;
 
         var eliminado = await ClientesService.Eliminar(Cliente.ClienteId);
-        if (eliminado != null)
+        if (eliminado)
         {
             Saved = "Cliente Eliminado Exitosamente";
             navigationManager.NavigateTo("/");
