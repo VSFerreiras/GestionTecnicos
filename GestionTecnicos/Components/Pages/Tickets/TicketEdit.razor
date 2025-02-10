@@ -12,27 +12,27 @@
 
     <div class="container">
         <div class="card shadow-lg">
-            <div class="card-header text-center">
-                <h5 class="card-title">Editar Ticket</h5>
+            <div class="card-header text-center bg-primary text-white m-2">
+                <h3 class="card-title">Editar Ticket</h3>
             </div>
             <div class="card-body">
                 @* TicketId *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>TicketId</strong></label>
-                    <InputNumber class="form-control" @bind-Value="Ticket.TicketId" readonly />
+                    <label class="form-label">TicketId</label>
+                    <InputNumber class="form-control small-input" @bind-Value="Ticket.TicketId" readonly />
                 </div>
 
                 @* Fecha de Ticket *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Fecha</strong></label>
+                    <label class="form-label">Fecha</label>
                     <InputDate class="form-control" @bind-Value="Ticket.Fecha" />
                 </div>
 
                 @* Prioridad *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Prioridad</strong></label>
+                    <label class="form-label">Prioridad</label>
                     <InputSelect class="form-control form-select" @bind-Value="Ticket.Prioridad">
-                        <option value="0" selected disabled>Seleccione prioridad</option>
+                        <option value="" selected disabled>Seleccione prioridad</option>
                         <option value="Baja">1-Baja</option>
                         <option value="Media">2-Media</option>
                         <option value="Alta">3-Alta</option>
@@ -42,27 +42,27 @@
 
                 @* Asunto *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Asunto</strong></label>
-                    <InputText class="form-control" @bind-Value="Ticket.Asunto" />
+                    <label class="form-label">Asunto</label>
+                    <InputText class="form-control wide-input" @bind-Value="Ticket.Asunto" />
                     <ValidationMessage For="@(() => Ticket.Asunto)" />
                 </div>
 
                 @* Descripcion *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Descripción</strong></label>
-                    <InputText class="form-control" @bind-Value="Ticket.Descripcion" />
+                    <label class="form-label">Descripción</label>
+                    <InputText class="form-control wide-input" @bind-Value="Ticket.Descripcion" />
                     <ValidationMessage For="@(() => Ticket.Descripcion)" />
                 </div>
 
                 @* Tiempo invertido (Horas) *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Tiempo invertido (Horas)</strong></label>
-                    <InputNumber class="form-control" @bind-Value="Ticket.TiempoInvertido" />
+                    <label class="form-label">Tiempo invertido (Horas)</label>
+                    <InputNumber class="form-control wide-input" @bind-Value="Ticket.TiempoInvertido" />
                 </div>
 
                 @* Cliente *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Cliente</strong></label>
+                    <label class="form-label">Cliente</label>
                     <InputSelect class="form-control form-select" @bind-Value="Ticket.ClienteId">
                         <option value="0" selected disabled>Seleccione un Cliente</option>
                         @foreach (var cliente in ListaClientes)
@@ -75,14 +75,18 @@
 
             @* Footer *@
             <div class="card-footer mt-2 text-center">
-                <button type="submit" class="btn btn-primary bi bi-floppy">Guardar</button>
-                <a href="/Ticket" class="btn btn-secondary"><span class="bi bi-arrow-left"></span> Retroceder</a>
+                <button type="submit" class="btn btn-outline-success">
+                    <span class="bi bi-check-circle-fill"></span> Guardar
+                </button>
+                <a href="/Ticket" class="btn btn-outline-danger">
+                    <span class="bi bi-arrow-bar-left"></span> Retroceder
+                </a>
             </div>
         </div>
     </div>
 
     @* Notificaciones *@
-    <label style="color:red;" hidden="@string.IsNullOrEmpty(MensajeError)">@MensajeError</label>
+    <label class="text-danger" hidden="@string.IsNullOrEmpty(MensajeError)">@MensajeError</label>
 </EditForm>
 
 @code {

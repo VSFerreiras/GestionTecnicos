@@ -5,9 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GestionTecnicos.Services;
 
-public class SistemasService (IDbContextFactory<Contexto> DbFactory)
+public class SistemasService(IDbContextFactory<Contexto> DbFactory)
 {
-
     public async Task<bool> Guardar(Sistemas Sistema)
     {
         if (!await Existe(Sistema.SistemaId))
@@ -19,7 +18,7 @@ public class SistemasService (IDbContextFactory<Contexto> DbFactory)
             return await Modificar(Sistema);
         }
     }
-    
+
     public async Task<bool> Existe(int SistemaId)
     {
         await using var Contexto = DbFactory.CreateDbContext();
@@ -28,7 +27,7 @@ public class SistemasService (IDbContextFactory<Contexto> DbFactory)
 
     public async Task<bool> Insertar(Sistemas Sistema)
     {
-        await using var Contexto =  await DbFactory.CreateDbContextAsync();
+        await using var Contexto = await DbFactory.CreateDbContextAsync();
         Contexto.Sistemas.Add(Sistema);
         return await Contexto.SaveChangesAsync() > 0;
     }

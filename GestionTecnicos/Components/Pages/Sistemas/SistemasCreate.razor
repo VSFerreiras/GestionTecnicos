@@ -6,56 +6,64 @@
 @* HTML *@
 <PageTitle>Registro de Sistemas</PageTitle>
 <EditForm Model="Sistema" OnValidSubmit="Guardar">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
 
     <div class="container">
         <div class="card shadow-lg">
-            <div class="card-header text-center">
-                <h5 class="card-title">Registro de Sistemas</h5>
+            <div class="card-header text-center bg-primary text-white m-2">
+                <h3 class="card-title">Registro de Sistemas</h3>
             </div>
             <div class="card-body">
                 @* SistemaId *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>SistemaId</strong></label>
-                    <InputNumber class="form-control" @bind-Value="Sistema.SistemaId" readonly />
+                    <label class="form-label">SistemaId</label>
+                    <InputNumber class="form-control small-input" @bind-Value="Sistema.SistemaId" readonly/>
                 </div>
 
                 @* Descripción *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Descripción</strong></label>
-                    <InputText class="form-control" @bind-Value="Sistema.Descripcion" />
-                    <ValidationMessage For="@(() => Sistema.Descripcion)" />
+                    <label class="form-label">Descripción</label>
+                    <InputText class="form-control wide-input" @bind-Value="Sistema.Descripcion"/>
+                    <ValidationMessage For="@(() => Sistema.Descripcion)"/>
                 </div>
 
                 @* Complejidad *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Complejidad</strong></label>
-                    <InputNumber class="form-control" @bind-Value="Sistema.Complejidad" />
-                    <ValidationMessage For="@(() => Sistema.Complejidad)" />
+                    <label class="form-label">Complejidad</label>
+                    <InputNumber class="form-control wide-input" @bind-Value="Sistema.Complejidad"/>
+                    <ValidationMessage For="@(() => Sistema.Complejidad)"/>
                 </div>
             </div>
 
             @* Footer *@
             <div class="card-footer text-center mt-2">
-                <a href="/Sistema" class="btn btn-secondary"><span class="bi bi-arrow-left"></span> Retroceder</a>
-                <button type="submit" class="btn btn-primary bi bi-floppy"> Guardar </button>
-                <button type="button" class="btn btn-outline-success" @onclick="Nuevo">Nuevo</button>
+                <button type="button" class="btn btn-outline-primary" @onclick="Nuevo">
+                    <span class="bi bi-plus"></span> Nuevo
+                </button>
+                <button type="submit" class="btn btn-outline-success">
+                    <span class="bi bi-check-circle-fill"></span> Guardar
+                </button>
+                <a href="/Sistema" class="btn btn-outline-danger">
+                    <span class="bi bi-arrow-bar-left"></span> Retroceder
+                </a>
             </div>
         </div>
     </div>
 
     @* Notificaciones *@
-    <label style="color:red;" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
+    <label class="text-success" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
+    <label class="text-danger" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
 </EditForm>
 
 @code {
     public Sistemas Sistema { get; set; } = new Sistemas();
-    public string Error { get; set; } = string.Empty;
+    private string Error { get; set; } = string.Empty;
+    private string Saved { get; set; } = string.Empty;
 
-    public void Nuevo()
+    private void Nuevo()
     {
-        this.Sistema = new Sistemas();
+        Sistema = new Sistemas();
     }
 
     private async Task Guardar()
@@ -63,6 +71,7 @@
         var creado = await SistemasService.Guardar(Sistema);
         if (creado)
         {
+            Saved = "Registro creado exitosamente";
             navigationManager.NavigateTo("/Sistema");
         }
         else

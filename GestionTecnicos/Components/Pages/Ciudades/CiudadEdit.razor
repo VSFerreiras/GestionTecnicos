@@ -7,40 +7,44 @@
 
 <EditForm Model="Ciudad" OnValidSubmit="Modificar">
     <DataAnnotationsValidator />
+    <ValidationSummary />
 
     <div class="container">
         <div class="card shadow-lg">
-            <div class="card-header text-center">
-                <h5 class="card-title">Editar Ciudad</h5>
+            <div class="card-header text-center bg-primary text-white m-2">
+                <h3 class="card-title">Editar Ciudad</h3>
             </div>
 
             <div class="card-body">
-
                 @* CiudadId *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>CiudadId</strong></label>
-                    <InputNumber class="form-control" @bind-Value="Ciudad.CiudadId" readonly />
+                    <label class="form-label">CiudadId</label>
+                    <InputNumber class="form-control small-input" @bind-Value="Ciudad.CiudadId" readonly />
                 </div>
 
                 @* Nombre Ciudad *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Nombre Ciudad</strong></label>
-                    <InputText class="form-control" @bind-Value="Ciudad.CiudadNombre" />
+                    <label class="form-label">Nombre Ciudad</label>
+                    <InputText class="form-control wide-input" @bind-Value="Ciudad.CiudadNombre" />
                     <ValidationMessage For="(() => Ciudad.CiudadNombre)" />
                 </div>
-
             </div>
 
             @* Footer *@
             <div class="card-footer mt-2 text-center">
-                <button type="submit" class="btn btn-primary bi bi-floppy">Guardar</button>
-                <a href="/Ciudad" class="btn btn-secondary"><span class="bi bi-arrow-left"></span> Retroceder</a>
+                <button type="submit" class="btn btn-outline-success">
+                    <span class="bi bi-check-circle-fill"></span> Guardar
+                </button>
+                <a href="/Ciudad" class="btn btn-outline-danger">
+                    <span class="bi bi-arrow-bar-left"></span> Retroceder
+                </a>
             </div>
         </div>
     </div>
+
     @* Notificaciones *@
-    <label style="color:green;" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
-    <label style="color:red;" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
+    <label class="text-success" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
+    <label class="text-danger" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
 </EditForm>
 
 @code {
@@ -70,11 +74,14 @@
             Saved = "Ciudad editada exitosamente";
             navigationManager.NavigateTo("/Ciudad");
         }
+        else
+        {
+            Error = "Error al guardar el Registro";
+        }
     }
 
     public async Task<bool> ExisteCiudad()
     {
-        var existe = await CiudadesService.Existe(Ciudad.CiudadId);
-        return existe;
+        return await CiudadesService.Existe(Ciudad.CiudadId);
     }
 }

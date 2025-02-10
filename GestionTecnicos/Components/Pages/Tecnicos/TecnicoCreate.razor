@@ -6,42 +6,47 @@
 @*HTML*@
 <PageTitle>Crear</PageTitle>
 <EditForm Model="Tecnico" OnValidSubmit="Guardar">
-    <DataAnnotationsValidator />
+    <DataAnnotationsValidator/>
 
     <div class="container">
         <div class="card shadow-lg">
-            <div class="card-header text-center">
-                <h5 class="card-title">Crear Tecnicos</h5>
+            <div class="card-header text-center bg-primary text-white m-2">
+                <h3 class="card-title">Registro de Tecnicos</h3>
             </div>
 
-            <div class="card-body ">
-
+            <div class="card-body">
                 @*TecnicoId*@
                 <div class="mb-3">
-                    <label class="form-label"><strong>TecnicoId</strong></label>
-                    <InputNumber class="form-control" @bind-Value="Tecnico.TecnicoId" readonly></InputNumber>
+                    <label class="form-label">TecnicoId</label>
+                    <InputNumber class="form-control small-input" @bind-Value="Tecnico.TecnicoId" readonly />
                 </div>
 
                 @*Nombres*@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Nombres</strong></label>
-                    <InputText class="form-control" @bind-Value="Tecnico.Nombres"/>
+                    <label class="form-label">Nombres</label>
+                    <InputText class="form-control wide-input" @bind-Value="Tecnico.Nombres"/>
                     <ValidationMessage For="@(() => Tecnico.Nombres)"/>
                 </div>
 
                 @*SueldoHora*@
                 <div class="mb-3">
-                    <label class="form-label"><strong>SueldoHora</strong></label>
-                    <InputNumber class="form-control" @bind-Value="Tecnico.SueldoHora"/>
+                    <label class="form-label">Sueldo por hora</label>
+                    <InputNumber class="form-control wide-input" @bind-Value="Tecnico.SueldoHora"/>
                     <ValidationMessage For="@(() => Tecnico.SueldoHora)"/>
                 </div>
             </div>
 
             @*Footer*@
             <div class="card-footer text-center mt-2">
-                <a href="/" class="btn btn-danger"> <span class="bi bi-arrow-left"></span>Retroceder</a>
-                <button type="submit" class="btn btn-primary bi bi-floppy"> Guardar </button>
-                <button type="submit" class="btn btn-outline-success" @onclick="Nuevo">Nuevo</button>            
+                <button type="button" class="btn btn-outline-primary" @onclick="Nuevo">
+                    <span class="bi bi-plus"></span> Nuevo
+                </button>
+                <button type="submit" class="btn btn-outline-success">
+                    <span class="bi bi-check-circle-fill"></span> Guardar
+                </button>
+                <a href="/" class="btn btn-outline-danger">
+                    <span class="bi bi-arrow-bar-left"></span> Retroceder
+                </a>
             </div>
         </div>
     </div>
@@ -50,15 +55,14 @@
     <label style="color:red;" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
 </EditForm>
 
-
-
 @code {
     private string Error { get; set; } = string.Empty;
     private string Saved { get; set; } = string.Empty;
-    private Tecnicos Tecnico {get; set;}= new Tecnicos();
+    private Tecnicos Tecnico { get; set; } = new Tecnicos();
 
-    public void Nuevo(){
-        this.Tecnico = new Tecnicos();
+    private void Nuevo()
+    {
+        Tecnico = new Tecnicos();
     }
 
     private async Task<bool> Validar()
@@ -69,22 +73,30 @@
         {
             return false;
         }
+
         return true;
     }
-     public async Task Guardar(){
+
+    private async Task Guardar()
+    {
         Error = string.Empty;
         Saved = string.Empty;
 
-        if(!await Validar()){
+        if (!await Validar())
+        {
             Error = "No puede haber dos técnicos con el mismo nombre";
             return;
         }
-        var guardo = await TecnicosService.Guardar(this.Tecnico);
-        if(guardo!=null){
-            Saved = "Tecnico Guardado Exitosamente";
-        }else{
+
+        var guardado = await TecnicosService.Guardar(Tecnico);
+        if (guardado)
+        {
+            navigationManager.NavigateTo("/");
+            Saved = "Registro creado exitosamente";
+        }
+        else
+        {
             Error = "Error al guardar el Registro";
         }
-
     }
 }

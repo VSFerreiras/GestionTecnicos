@@ -1,72 +1,86 @@
 @page "/Ciudad/Create"
 @inject CiudadesService CiudadesService
 @inject NavigationManager navigationManager
-@inject ClientesService ClientesService
 @rendermode InteractiveServer
 
 @*HTML*@
 <PageTitle>Registro de Ciudades</PageTitle>
 <EditForm Model="Ciudad" OnValidSubmit="Guardar">
-    <DataAnnotationsValidator />
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
 
     <div class="container">
         <div class="card shadow-lg">
-            <div class="card-header text-center">
-                <h5 class="card-title">Registro de Ciudades</h5>
+            <div class="card-header text-center bg-primary text-white m-2">
+                <h3 class="card-title">Registro de Ciudades</h3>
             </div>
 
             <div class="card-body">
                 @*CiudadId*@
                 <div class="mb-3">
-                    <label class="form-label"><strong>CiudadId</strong></label>
-                    <InputNumber class="form-control" @bind-Value="Ciudad.CiudadId" readonly/>
+                    <label class="form-label">CiudadId</label>
+                    <InputNumber class="form-control small-input" @bind-Value="Ciudad.CiudadId" readonly/>
                 </div>
 
                 @*Ciudad Nombre*@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Nombre de la Ciudad</strong></label>
-                    <InputText class="form-control" @bind-Value="Ciudad.CiudadNombre"/>
+                    <label class="form-label">Nombre de la Ciudad</label>
+                    <InputText class="form-control wide-input" @bind-Value="Ciudad.CiudadNombre"/>
                     <ValidationMessage For="@(() => Ciudad.CiudadNombre)"/>
                 </div>
             </div>
 
             @*Footer*@
             <div class="card-footer text-center mt-2">
-                <a href="/Ciudad" class="btn btn-danger"><span class="bi bi-arrow-left"></span> Retroceder</a>
-                <button type="submit" class="btn btn-primary bi bi-floppy"> Guardar </button>
-                <button type="submit" class="btn btn-outline-success" @onclick="Nuevo">Nuevo</button>
+                <button type="button" class="btn btn-outline-primary" @onclick="Nuevo">
+                    <span class="bi bi-plus"></span> Nuevo
+                </button>
+                <button type="submit" class="btn btn-outline-success">
+                    <span class="bi bi-check-circle-fill"></span> Guardar
+                </button>
+                <a href="/Ciudad" class="btn btn-outline-danger">
+                    <span class="bi bi-arrow-bar-left"></span> Retroceder
+                </a>
             </div>
         </div>
     </div>
 
     @* Notificaciones *@
-    <label style="color:green;" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
-    <label style="color:red;" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
+    <label class="text-success" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
+    <label class="text-danger" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
 </EditForm>
 
 @code {
     private string Error { get; set; } = string.Empty;
     private string Saved { get; set; } = string.Empty;
     private Ciudades Ciudad { get; set; } = new Ciudades();
-    
-    public void Nuevo() {
-        this.Ciudad = new Ciudades();
+
+    private void Nuevo()
+    {
+        Ciudad = new Ciudades();
     }
 
-    public async Task<bool> ValidarNombre(){
+    private async Task<bool> ValidarNombre()
+    {
         return await CiudadesService.ExisteNombre(Ciudad.CiudadId, Ciudad.CiudadNombre);
     }
 
-    private async Task Guardar(){
-        if (await ValidarNombre()){
+    private async Task Guardar()
+    {
+        if (await ValidarNombre())
+        {
             Error = "Ya existe una ciudad con ese nombre";
             return;
         }
 
-        var guardo = await CiudadesService.Guardar(this.Ciudad);
-        if(guardo){
-            Saved = "Ciudad Guardada Exitosamente";
-        }else{
+        var guardado = await CiudadesService.Guardar(Ciudad);
+        if (guardado)
+        {
+            Saved = "Registro creado exitosamente";
+            navigationManager.NavigateTo("/Ciudad");
+        }
+        else
+        {
             Error = "Error al guardar el Registro";
         }
     }

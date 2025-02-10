@@ -569,7 +569,6 @@
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/scopedcss/Components/Layout/NavMenu.razor.rz.scp.css
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/scopedcss/bundle/GestionTecnicos.styles.css
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/scopedcss/projectbundle/GestionTecnicos.bundle.scp.css
-/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/compressed/y9onpmyxj5-w7mf952350.gz
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/compressed/bk5a8zlqgs-bqjiyaj88i.gz
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/compressed/1w44otains-c2jlpeoesf.gz
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/compressed/m6rgml5voy-erw9l3u2r3.gz
@@ -629,3 +628,15 @@
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/GestionTecnicos.genruntimeconfig.cache
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/ref/GestionTecnicos.dll
 /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/appsettings.json
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.Caching.Abstractions.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.Caching.Memory.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.Logging.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.Logging.Abstractions.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.Options.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/Microsoft.Extensions.Primitives.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/System.Formats.Asn1.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/bin/Debug/net9.0/System.Text.Json.dll
+/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/Debug/net9.0/compressed/y9onpmyxj5-jucgflrnta.gz

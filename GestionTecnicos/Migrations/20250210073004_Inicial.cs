@@ -17,7 +17,7 @@ namespace GestionTecnicos.Migrations
                 {
                     CiudadId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CiudadNombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CiudadNombre = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
                     ClienteId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -26,12 +26,26 @@ namespace GestionTecnicos.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Sistemas",
+                columns: table => new
+                {
+                    SistemaId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Descripcion = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    Complejidad = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sistemas", x => x.SistemaId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Tecnicos",
                 columns: table => new
                 {
                     TecnicoId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombres = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Nombres = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     SueldoHora = table.Column<float>(type: "real", nullable: false)
                 },
                 constraints: table =>
@@ -48,9 +62,9 @@ namespace GestionTecnicos.Migrations
                     TecnicoId = table.Column<int>(type: "int", nullable: false),
                     CiudadId = table.Column<int>(type: "int", nullable: false),
                     FechaIngreso = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Nombres = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Direccion = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Rnc = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
+                    Nombres = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Direccion = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Rnc = table.Column<string>(type: "nvarchar(9)", maxLength: 9, nullable: false),
                     LimiteCredito = table.Column<float>(type: "real", nullable: false)
                 },
                 constraints: table =>
@@ -114,6 +128,9 @@ namespace GestionTecnicos.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Sistemas");
+
             migrationBuilder.DropTable(
                 name: "Tickets");
 

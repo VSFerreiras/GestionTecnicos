@@ -7,62 +7,62 @@
 @* HTML *@
 <PageTitle>Registro de Tickets</PageTitle>
 <EditForm Model="Ticket" OnValidSubmit="Guardar">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
 
     <div class="container">
         <div class="card shadow-lg">
-            <div class="card-header text-center">
-                <h5 class="card-title">Registro de Tickets</h5>
+            <div class="card-header text-center bg-primary text-white m-2">
+                <h3 class="card-title">Registro de Tickets</h3>
             </div>
             <div class="card-body">
                 @* TicketId *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>TicketId</strong></label>
-                    <InputNumber class="form-control" @bind-Value="Ticket.TicketId" readonly />
+                    <label class="form-label">TicketId</label>
+                    <InputNumber class="form-control small-input" @bind-Value="Ticket.TicketId" readonly/>
                 </div>
 
                 @* Fecha de Ticket *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Fecha</strong></label>
-                    <InputDate class="form-control" @bind-Value="Ticket.Fecha" />
+                    <label class="form-label">Fecha</label>
+                    <InputDate class="form-control" @bind-Value="Ticket.Fecha"/>
                 </div>
 
                 @* Prioridad *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Prioridad</strong></label>
+                    <label class="form-label">Prioridad</label>
                     <InputSelect class="form-control form-select" @bind-Value="Ticket.Prioridad">
-                        <option value="0" selected disabled>Seleccione prioridad</option>
+                        <option value="" selected disabled>Seleccione prioridad</option>
                         <option value="Baja">1-Baja</option>
                         <option value="Media">2-Media</option>
                         <option value="Alta">3-Alta</option>
                     </InputSelect>
-                    <ValidationMessage For="@(() => Ticket.Prioridad)" />
+                    <ValidationMessage For="@(() => Ticket.Prioridad)"/>
                 </div>
 
                 @* Asunto *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Asunto</strong></label>
-                    <InputText class="form-control" @bind-Value="Ticket.Asunto" />
-                    <ValidationMessage For="@(() => Ticket.Asunto)" />
+                    <label class="form-label">Asunto</label>
+                    <InputText class="form-control wide-input" @bind-Value="Ticket.Asunto"/>
+                    <ValidationMessage For="@(() => Ticket.Asunto)"/>
                 </div>
 
                 @* Descripcion *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Descripción</strong></label>
-                    <InputText class="form-control" @bind-Value="Ticket.Descripcion" />
-                    <ValidationMessage For="@(() => Ticket.Descripcion)" />
+                    <label class="form-label">Descripción</label>
+                    <InputTextArea class="form-control wide-input" @bind-Value="Ticket.Descripcion"/>
+                    <ValidationMessage For="@(() => Ticket.Descripcion)"/>
                 </div>
 
                 @* Tiempo invertido (Horas) *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Tiempo invertido (Horas)</strong></label>
-                    <InputNumber class="form-control" @bind-Value="Ticket.TiempoInvertido" />
+                    <label class="form-label">Tiempo invertido (Horas)</label>
+                    <InputNumber class="form-control wide-input" @bind-Value="Ticket.TiempoInvertido"/>
                 </div>
 
                 @* Cliente *@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Cliente</strong></label>
+                    <label class="form-label">Cliente</label>
                     <InputSelect class="form-control form-select" @bind-Value="Ticket.ClienteId">
                         <option value="0" selected disabled>Seleccione un Cliente</option>
                         @foreach (var cliente in ListaClientes)
@@ -75,25 +75,38 @@
 
             @* Footer *@
             <div class="card-footer text-center mt-2">
-                <a href="/Ticket" class="btn btn-secondary"><span class="bi bi-arrow-left"></span> Retroceder</a>
-                <button type="submit" class="btn btn-primary bi bi-floppy"> Guardar </button>
-                <button type="button" class="btn btn-outline-success" @onclick="Nuevo">Nuevo</button>
+                <button type="button" class="btn btn-outline-primary" @onclick="Nuevo">
+                    <span class="bi bi-plus"></span> Nuevo
+                </button>
+                <button type="submit" class="btn btn-outline-success">
+                    <span class="bi bi-check-circle-fill"></span> Guardar
+                </button>
+                <a href="/Ticket" class="btn btn-outline-danger">
+                    <span class="bi bi-arrow-bar-left"></span> Retroceder
+                </a>
             </div>
         </div>
     </div>
 
     @* Notificaciones *@
-    <label style="color:red;" hidden="@string.IsNullOrEmpty(MensajeError)">@MensajeError</label>
+    <label class="text-success" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
+    <label class="text-danger" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
 </EditForm>
 
 @code {
     private Tickets Ticket { get; set; } = new Tickets();
-    public string MensajeError { get; set; } = string.Empty;
+    public string Error { get; set; } = string.Empty;
+    public string Saved { get; set; } = string.Empty;
     public List<Clientes> ListaClientes { get; set; } = new List<Clientes>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        ListaClientes = await ClientesService.Listar(c => c.ClienteId > 0);
+    }
 
     public void Nuevo()
     {
-        this.Ticket = new Tickets();
+        Ticket = new Tickets();
     }
 
     private async Task Guardar()
@@ -101,16 +114,12 @@
         var creado = await TicketsService.Guardar(Ticket);
         if (creado)
         {
+            Saved = "Registro creado exitosamente";
             navigationManager.NavigateTo("/Ticket");
         }
         else
         {
-            MensajeError = "Error al guardar el Registro";
+            Error = "Error al guardar el Registro";
         }
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        ListaClientes = await ClientesService.Listar(c => c.ClienteId > 0);
     }
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionTecnicos.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20250203193945_Inicial")]
+    [Migration("20250210073004_Inicial")]
     partial class Inicial
     {
         /// <inheritdoc />
@@ -35,7 +35,8 @@ namespace GestionTecnicos.Migrations
 
                     b.Property<string>("CiudadNombre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.Property<int>("ClienteId")
                         .HasColumnType("int");
@@ -58,7 +59,8 @@ namespace GestionTecnicos.Migrations
 
                     b.Property<string>("Direccion")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("FechaIngreso")
                         .HasColumnType("datetime2");
@@ -68,12 +70,13 @@ namespace GestionTecnicos.Migrations
 
                     b.Property<string>("Nombres")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Rnc")
                         .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("nvarchar(11)");
+                        .HasMaxLength(9)
+                        .HasColumnType("nvarchar(9)");
 
                     b.Property<int>("TecnicoId")
                         .HasColumnType("int");
@@ -88,6 +91,27 @@ namespace GestionTecnicos.Migrations
                     b.ToTable("Clientes");
                 });
 
+            modelBuilder.Entity("GestionTecnicos.Models.Sistemas", b =>
+                {
+                    b.Property<int>("SistemaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SistemaId"));
+
+                    b.Property<double>("Complejidad")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.HasKey("SistemaId");
+
+                    b.ToTable("Sistemas");
+                });
+
             modelBuilder.Entity("GestionTecnicos.Models.Tecnicos", b =>
                 {
                     b.Property<int>("TecnicoId")
@@ -98,7 +122,8 @@ namespace GestionTecnicos.Migrations
 
                     b.Property<string>("Nombres")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<float>("SueldoHora")
                         .HasColumnType("real");

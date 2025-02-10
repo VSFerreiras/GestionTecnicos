@@ -1,55 +1,58 @@
 @page "/Sistema"
 @inject SistemasService sistemaService
-@inject NavigationManager navigationManager
 @rendermode InteractiveServer
 
 @* HTML *@
-<PageTitle>Registro de Sistemas</PageTitle>
+<PageTitle>Consulta de Sistemas</PageTitle>
 <div class="container">
     <div class="card shadow-lg">
-        <div class="card-header space-between">
-            <h5 class="card-title">Registro de Sistemas</h5>
-            <a href="/Sistema/Create" class="btn btn-success">
-                <span class="bi bi-plus-square"></span> Crear
+        <div class="card-header header-padding text-center">
+            <h2 class="card-title">Consulta de Sistemas</h2>
+            <a href="/Sistema/Create" class="btn btn-success float-end">
+                <span class="bi bi-plus-circle mt-3"></span> Crear
             </a>
         </div>
-
         <div class="card-body">
-            @* Etiquetas *@
+            @*Labels*@
             <div class="row">
-                <div class="col-3">
-                    <label class="col-form-label"><strong>Filtrar por</strong></label>
+                @*Filtrar por*@
+                <div class="col-4">
+                    <label class="col-form-label">Filtrar por</label>
                 </div>
 
+                @*ValorFiltro*@
                 <div class="col-4">
-                    <label class="col-form-label"><strong>Búsqueda</strong></label>
+                    <label class="col-form-label">Búsqueda</label>
                 </div>
             </div>
 
-            @* Inputs y botones *@
+            @*Inputs y botones*@
             <div class="row align-items-center">
-                <div class="col-3">
-                    <InputSelect class="form-select" @bind-Value="Filtro">
-                        <option value="" selected disabled>Elija una opción</option>
-                        <option value="SistemaId">SistemaId</option>
-                    </InputSelect>
+                <div class="col-4">
+                    <div class="input-group">
+                        <InputSelect class="form-select" @bind-Value="Filtro">
+                            <option value="" selected disabled>Elija una opción</option>
+                            <option value="SistemaId">SistemaId</option>
+                        </InputSelect>
+                        <button type="button" class="btn btn-outline-secondary" @onclick="Restablecer">
+                            <span class="bi bi-arrow-clockwise"></span>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="col-4">
                     <div class="input-group">
                         <input class="form-control" @bind="ValorFiltro" placeholder="Buscar"/>
-                        <button type="button" class="btn btn-outline-primary bi bi-search" @onclick="Buscar"></button>
+                        <button type="button" class="btn btn-primary" @onclick="Buscar">
+                            <span class="bi bi-search"></span> Buscar
+                        </button>
                     </div>
-                </div>
-
-                <div class="col-auto">
-                    <button type="button" class="btn btn-outline-secondary bi bi-arrow-clockwise" @onclick="Restablecer"></button>
                 </div>
             </div>
 
             @* Tabla *@
-            <table class="table table-hover">
-                <thead class="table table-striped text-black">
+            <table class="table table-hover text-center">
+                <thead class="table-striped text-black" style="border-bottom: 3px solid green;">
                 <tr>
                     <th>SistemaId</th>
                     <th>Descripción</th>
@@ -65,11 +68,11 @@
                         <td>@sistema.SistemaId</td>
                         <td>@sistema.Descripcion</td>
                         <td>@sistema.Complejidad</td>
-                        <td class="text-center">
-                            <a class="btn btn-outline-primary bi bi-pencil-square" href="/Sistema/Edit/@sistema.SistemaId"></a>
+                        <td>
+                            <a class="btn btn-outline-success bi bi-pencil-fill" href="/Sistema/Edit/@sistema.SistemaId"></a>
                         </td>
                         <td>
-                            <a class="btn btn-outline-danger bi bi-trash" href="/Sistema/Delete/@sistema.SistemaId"></a>
+                            <a class="btn btn-outline-danger bi bi-trash-fill" href="/Sistema/Delete/@sistema.SistemaId"></a>
                         </td>
                     </tr>
                 }

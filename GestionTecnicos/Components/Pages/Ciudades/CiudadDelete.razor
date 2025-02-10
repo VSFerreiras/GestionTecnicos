@@ -1,7 +1,6 @@
 @page "/Ciudad/Delete/{CiudadId:int}"
 @inject CiudadesService CiudadesService
 @inject NavigationManager navigationManager
-
 @rendermode InteractiveServer
 
 <PageTitle>Eliminar Ciudad</PageTitle>
@@ -10,31 +9,34 @@
 
     <div class="container">
         <div class="card shadow-lg">
-            <div class="card-header text-center">
-                <h5 class="card-title">Eliminar Ciudad</h5>
+            <div class="card-header text-center bg-primary text-white m-2">
+                <h4 class="card-title"><strong>Eliminar Ciudad</strong></h4>
             </div>
 
             <div class="card-body">
-                <div class="text-center">
-                    <h6 style="color: red; font-size: 2em; font-weight: normal;">¿Estás seguro de que quieres eliminar esta ciudad?</h6>
+                <div class="card-header bg-light">
+                    <h6 class="text-danger fs-4">¿Estás seguro de que quieres eliminar esta ciudad?</h6>
                 </div>
-                <ul class="mt-4">
-                    <li><strong>CiudadId: </strong>@Ciudad.CiudadId</li>
-                    <li><strong>Nombre de la ciudad: </strong>@Ciudad.CiudadNombre</li>
-                </ul>
+                <div class="card shadow-lg my-3 col-md-6">
+                    <h4 class="bg-light card-header fw-bold text-center">Datos de la Ciudad</h4>
+                    <ul class="px-3 pt-4 pb-5 list-unstyled">
+                        <li><strong>CiudadId: </strong>@Ciudad.CiudadId</li>
+                        <li><strong>Nombre de la ciudad: </strong>@Ciudad.CiudadNombre</li>
+                    </ul>
+                </div>
             </div>
 
             @*Footer*@
-            <div class="card-footer text-center mt-2">
-                <a href="/Ciudad" class="btn btn-secondary"> <span class="bi bi-arrow-left"></span> Volver</a>
-                <button type="submit" class="btn btn-danger bi bi-trash"> Eliminar </button>
+            <div class="card-footer mt-2">
+                <button type="submit" class="btn btn-outline-danger bi bi-trash-fill"> Eliminar </button>
+                <a href="/Ciudad" class="btn btn-outline-primary"> <span class="bi bi-box-arrow-left"></span> Volver</a>
             </div>
         </div>
     </div>
 
     @* Notificaciones *@
-    <label style="color:green;" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
-    <label style="color:red;" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
+    <label class="text-success" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
+    <label class="text-danger" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
 </EditForm>
 
 @code {

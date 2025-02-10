@@ -6,36 +6,37 @@
 @rendermode InteractiveServer
 
 @*HTML*@
-<PageTitle>Registro de clientes</PageTitle>
+<PageTitle>Registro de Clientes</PageTitle>
 <EditForm Model="Cliente" OnValidSubmit="Guardar">
-    <DataAnnotationsValidator />
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
 
     <div class="container">
         <div class="card shadow-lg">
-            <div class="card-header text-center">
-                <h5 class="card-title">Registro de clientes</h5>
+            <div class="card-header text-center bg-primary text-white m-2">
+                <h3 class="card-title">Registro de Clientes</h3>
             </div>
 
             <div class="card-body">
                 @*ClienteId*@
                 <div class="mb-3">
-                    <label class="form-label"><strong>ClienteId</strong></label>
-                    <InputNumber class="form-control" @bind-Value="Cliente.ClienteId" readonly/>
+                    <label class="form-label">ClienteId</label>
+                    <InputNumber class="form-control small-input" @bind-Value="Cliente.ClienteId" readonly/>
                 </div>
 
                 @*Nombres*@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Nombres</strong></label>
-                    <InputText class="form-control" @bind-Value="Cliente.Nombres"/>
+                    <label class="form-label">Nombres</label>
+                    <InputText class="form-control wide-input" @bind-Value="Cliente.Nombres"/>
                     <ValidationMessage For="@(() => Cliente.Nombres)"/>
                 </div>
 
                 @*Direccion*@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Dirección</strong></label>
-                    <InputText class="form-control" @bind-Value="Cliente.Direccion"/>
+                    <label class="form-label">Dirección</label>
+                    <InputText class="form-control wide-input" @bind-Value="Cliente.Direccion"/>
                     <ValidationMessage For="@(() => Cliente.Direccion)"/>
-                    <InputSelect class="form-control form-select" @bind-Value ="@Cliente.CiudadId">
+                    <InputSelect class="form-control form-select" @bind-Value="@Cliente.CiudadId">
                         <option value="0" selected disabled>Seleccione una Ciudad</option>
                         @foreach (var ciudad in ListaCiudades)
                         {
@@ -46,30 +47,31 @@
 
                 @*FechaIngreso*@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Fecha de Ingreso</strong></label>
+                    <label class="form-label">Fecha de Ingreso</label>
                     <InputDate class="form-control" @bind-Value="Cliente.FechaIngreso" readonly/>
                 </div>
 
                 @*rnc*@
                 <div class="mb-3">
-                    <label class="form-label"><strong>RNC</strong></label>
-                    <InputText class="form-control" @bind-Value="Cliente.Rnc"/>
+                    <label class="form-label">RNC</label>
+                    <InputText class="form-control wide-input" @bind-Value="Cliente.Rnc"/>
                     <ValidationMessage For="@(() => Cliente.Rnc)"/>
                 </div>
 
                 @*LimiteCredito*@
                 <div class="mb-3">
-                    <label class="form-label"><strong>Límite crédito</strong></label>
-                    <InputNumber class="form-control" @bind-Value="Cliente.LimiteCredito"/>
+                    <label class="form-label">Límite crédito</label>
+                    <InputNumber class="form-control wide-input" @bind-Value="Cliente.LimiteCredito"/>
                     <ValidationMessage For="@(() => Cliente.LimiteCredito)"/>
                 </div>
 
                 @*ListaTecnicos*@
                 <div class="mb-3">
-                    <label><strong>Técnico encargado</strong></label>
+                    <label class="form-label">Técnico encargado</label>
                     <InputSelect class="form-control form-select" @bind-Value="Cliente.TecnicoId">
                         <option value="0" selected disabled>Seleccione un Técnico</option>
-                        @foreach (var tecnico in ListaTecnicos) {
+                        @foreach (var tecnico in ListaTecnicos)
+                        {
                             <option value="@tecnico.TecnicoId">@tecnico.Nombres</option>
                         }
                     </InputSelect>
@@ -78,66 +80,81 @@
 
             @*Footer*@
             <div class="card-footer text-center mt-2">
-                <a href="/Cliente" class="btn btn-danger"><span class="bi bi-arrow-left"></span> Retroceder</a>
-                <button type="submit" class="btn btn-primary bi bi-floppy"> Guardar </button>
-                <button type="submit" class="btn btn-outline-success" @onclick="Nuevo">Nuevo</button>
+                <button type="button" class="btn btn-outline-primary" @onclick="Nuevo">
+                    <span class="bi bi-plus"></span> Nuevo
+                </button>
+                <button type="submit" class="btn btn-outline-success">
+                    <span class="bi bi-check-circle-fill"></span> Guardar
+                </button>
+                <a href="/Cliente" class="btn btn-outline-danger">
+                    <span class="bi bi-arrow-bar-left"></span> Retroceder
+                </a>
             </div>
         </div>
     </div>
 
     @* Notificaciones *@
-    <label style="color:green;" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
-    <label style="color:red;" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
+    <label class="text-success" hidden="@string.IsNullOrEmpty(Saved)">@Saved</label>
+    <label class="text-danger" hidden="@string.IsNullOrEmpty(Error)">@Error</label>
 </EditForm>
 
 @code {
     private string Error { get; set; } = string.Empty;
     private string Saved { get; set; } = string.Empty;
     private Clientes Cliente { get; set; } = new Clientes();
-    public List<Tecnicos> ListaTecnicos { get; set; } = new List<Tecnicos>();
-    public List<Ciudades> ListaCiudades { get; set; } = new List<Ciudades>();
-    public string MensajeError { get; set; } = string.Empty;
+    private List<Tecnicos> ListaTecnicos { get; set; } = new List<Tecnicos>();
+    private List<Ciudades> ListaCiudades { get; set; } = new List<Ciudades>();
 
-    protected override async Task OnInitializedAsync(){
+    protected override async Task OnInitializedAsync()
+    {
         ListaTecnicos = await TecnicosService.Listar(c => c.TecnicoId > 0);
         ListaCiudades = await CiudadesServices.Listar(c => c.CiudadId > 0);
     }
 
-    public void Nuevo() {
-        this.Cliente = new Clientes();
+    private void Nuevo()
+    {
+        Cliente = new Clientes();
     }
 
-    public async Task<bool> ValidarNombre(){
+    private async Task<bool> ValidarNombre()
+    {
         return await ClientesService.ExisteNombre(Cliente.ClienteId, Cliente.Nombres);
     }
 
-    public async Task<bool> ValidarRnc(){
+    private async Task<bool> ValidarRnc()
+    {
         return await ClientesService.ExisteRnc(Cliente.ClienteId, Cliente.Rnc);
     }
-    
-    private async Task Guardar(){
-        if (await ValidarNombre()){
+
+    private async Task Guardar()
+    {
+        if (await ValidarNombre())
+        {
             Error = "Ya existe un cliente con ese nombre";
             return;
         }
 
-        if (await ValidarRnc()){
+        if (await ValidarRnc())
+        {
             Error = "Ya existe un cliente con ese Rnc.";
             return;
         }
 
-        if (string.IsNullOrEmpty(Cliente.Nombres)){
+        if (string.IsNullOrEmpty(Cliente.Nombres))
+        {
             Error = "Este campo es obligatorio";
             return;
         }
 
-        var guardo = await ClientesService.Guardar(this.Cliente);
-        if(guardo!=null){
-            Saved = "Tecnico Guardado Exitosamente";
-        }else{
+        var guardado = await ClientesService.Guardar(Cliente);
+        if (guardado)
+        {
+            Saved = "Registro creado exitosamente";
+            navigationManager.NavigateTo("/Cliente");
+        }
+        else
+        {
             Error = "Error al guardar el Registro";
         }
     }
-
-
 }
