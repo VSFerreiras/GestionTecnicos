@@ -1,62 +1,67 @@
 @page "/Cliente"
 @inject ClientesService ClientesService
-@inject NavigationManager navigationManager
 @rendermode InteractiveServer
 
 @* HTML *@
-<PageTitle>Registro de clientes</PageTitle>
+<PageTitle>Consulta de Clientes</PageTitle>
 <div class="container">
     <div class="card shadow-lg">
-        <div class="card-header space-between">
-            <h5 class="card-title">Registro de Clientes</h5>
-            <a href="/Cliente/Create" class="btn btn-success">
-                <span class="bi bi-plus-square mt-3"></span> Crear
+        <div class="card-header header-padding text-center">
+            <h2 class="card-title">Consulta de Clientes</h2>
+            <a href="/Cliente/Create" class="btn btn-success float-end">
+                <span class="bi bi-plus-circle mt-3"></span> Crear
             </a>
         </div>
-
         <div class="card-body">
-            @*labels*@
+            @*Labels*@
             <div class="row">
                 @*Filtrar por*@
-                <div class="col-3">
-                    <label class="col-form-label"><strong>Filtrar por</strong></label>
+                <div class="col-4">
+                    <label class="col-form-label">Filtrar por</label>
                 </div>
 
                 @*ValorFiltro*@
                 <div class="col-4">
-                    <label class="col-form-label"><strong>Busqueda</strong></label>
+                    <label class="col-form-label">Búsqueda</label>
                 </div>
             </div>
 
             @*Inputs y botones*@
             <div class="row align-items-center">
-                @*Filtro*@
-                <div class="col-3">
-                    <InputSelect class="form-select" @bind-Value="Filtro">
-                        <option value="" selected disabled>Elija una opción</option>
-                        <option value="ClienteId">ClienteId</option>
-                        <option value="Nombres">Nombres</option>
-                    </InputSelect>
+                @*Filtro y Restablecer*@
+                <div class="col-4">
+                    <div class="input-group">
+                        <InputSelect class="form-select" @bind-Value="Filtro">
+                            <option value="" selected disabled>Elija una opción</option>
+                            <option value="ClienteId">ClienteId</option>
+                            <option value="Nombres">Nombres</option>
+                        </InputSelect>
+                        <button type="button" class="btn btn-outline-secondary" @onclick="Restablecer">
+                            <span class="bi bi-arrow-clockwise"></span>
+                        </button>
+                    </div>
                 </div>
 
                 @*Busqueda*@
                 <div class="col-4">
                     <div class="input-group">
                         <input class="form-control" @bind="ValorFiltro" placeholder="Buscar"/>
-                        <button type="button" class="btn btn-outline-primary bi bi-search" @onclick="Buscar"></button>
+                        <button type="button" class="btn btn-primary" @onclick="Buscar">
+                            <span class="bi bi-search"></span> Buscar
+                        </button>
                     </div>
                 </div>
             </div>
 
             @* Tabla *@
-            <table class="table table-hover">
-                <thead class="table table-striped text-black">
+            <table class="table table-hover text-center">
+                <thead class="table-striped text-black" style="border-bottom: 3px solid green;">
                 <tr>
                     <th>ClienteId</th>
                     <th>Nombres</th>
                     <th>Técnico Encargado</th>
                     <th>Dirección</th>
-                    <th>Límite de Credito</th>
+                    <th>Límite de Crédito</th>
                     <th>RNC</th>
                     <th>Editar</th>
                     <th>Eliminar</th>
@@ -72,11 +77,11 @@
                         <td>@cliente.Direccion</td>
                         <td>@cliente.LimiteCredito.ToString("N2")</td>
                         <td>@cliente.Rnc</td>
-                        <td class="text-center">
-                            <a class="btn btn-outline-primary bi bi-pencil-square" href="/Cliente/Edit/@cliente.ClienteId"></a>
+                        <td>
+                            <a class="btn btn-outline-success bi bi-pencil-fill" href="/Cliente/Edit/@cliente.ClienteId"></a>
                         </td>
                         <td>
-                            <a class="btn btn-outline-danger bi bi-trash" href="/Cliente/Delete/@cliente.ClienteId"></a>
+                            <a class="btn btn-outline-danger bi bi-trash-fill" href="/Cliente/Delete/@cliente.ClienteId"></a>
                         </td>
                     </tr>
                 }
@@ -115,5 +120,11 @@
 
         StateHasChanged();
     }
-    
+
+    private async Task Restablecer()
+    {
+        ListaClientes = await ClientesService.Listar(c => c.ClienteId > 0);
+        Filtro = string.Empty;
+        ValorFiltro = string.Empty;
+    }
 }
