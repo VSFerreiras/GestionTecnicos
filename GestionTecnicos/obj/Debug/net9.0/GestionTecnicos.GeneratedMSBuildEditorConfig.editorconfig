@@ -17,117 +17,117 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GestionTecnicos
 build_property.RootNamespace = GestionTecnicos
-build_property.ProjectDir = /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/
+build_property.ProjectDir = /var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /home/victor/RiderProjects/GestionTecnicos/GestionTecnicos
+build_property.MSBuildProjectDirectory = /var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/App.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Ciudades/CiudadCreate.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Ciudades/CiudadCreate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWRlcy9DaXVkYWRDcmVhdGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Ciudades/CiudadDelete.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Ciudades/CiudadDelete.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWRlcy9DaXVkYWREZWxldGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Ciudades/CiudadEdit.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Ciudades/CiudadEdit.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWRlcy9DaXVkYWRFZGl0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Ciudades/CiudadIndex.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Ciudades/CiudadIndex.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DaXVkYWRlcy9DaXVkYWRJbmRleC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Clientes/ClienteCreate.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Clientes/ClienteCreate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlcy9DbGllbnRlQ3JlYXRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Clientes/ClienteDelete.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Clientes/ClienteDelete.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlcy9DbGllbnRlRGVsZXRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Clientes/ClienteEdit.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Clientes/ClienteEdit.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlcy9DbGllbnRlRWRpdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Clientes/ClienteIndex.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Clientes/ClienteIndex.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DbGllbnRlcy9DbGllbnRlSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Error.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Sistemas/SistemasCreate.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Sistemas/SistemasCreate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9TaXN0ZW1hcy9TaXN0ZW1hc0NyZWF0ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Sistemas/SistemasDelete.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Sistemas/SistemasDelete.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9TaXN0ZW1hcy9TaXN0ZW1hc0RlbGV0ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Sistemas/SistemasEdit.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Sistemas/SistemasEdit.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9TaXN0ZW1hcy9TaXN0ZW1hc0VkaXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Sistemas/SistemasIndex.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Sistemas/SistemasIndex.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9TaXN0ZW1hcy9TaXN0ZW1hc0luZGV4LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tecnicos/TecnicoCreate.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tecnicos/TecnicoCreate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UZWNuaWNvcy9UZWNuaWNvQ3JlYXRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tecnicos/TecnicoDelete.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tecnicos/TecnicoDelete.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UZWNuaWNvcy9UZWNuaWNvRGVsZXRlLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tecnicos/TecnicoEdit.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tecnicos/TecnicoEdit.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UZWNuaWNvcy9UZWNuaWNvRWRpdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tecnicos/TecnicoIndex.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tecnicos/TecnicoIndex.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UZWNuaWNvcy9UZWNuaWNvSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tickets/TicketCreate.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tickets/TicketCreate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UaWNrZXRzL1RpY2tldENyZWF0ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tickets/TicketDelete.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tickets/TicketDelete.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UaWNrZXRzL1RpY2tldERlbGV0ZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tickets/TicketEdit.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tickets/TicketEdit.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UaWNrZXRzL1RpY2tldEVkaXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tickets/TicketIndex.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Pages/Tickets/TicketIndex.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UaWNrZXRzL1RpY2tldEluZGV4LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Routes.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Sb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/_Imports.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9fSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Layout/MainLayout.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-gx7aeces0q
 
-[/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Layout/NavMenu.razor]
+[/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-2eumrwvwf0

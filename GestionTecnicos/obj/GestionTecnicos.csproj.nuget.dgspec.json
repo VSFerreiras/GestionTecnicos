@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/GestionTecnicos.csproj": {}
+    "/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/GestionTecnicos.csproj": {}
   },
   "projects": {
-    "/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/GestionTecnicos.csproj": {
+    "/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/GestionTecnicos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/GestionTecnicos.csproj",
+        "projectUniqueName": "/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/GestionTecnicos.csproj",
         "projectName": "GestionTecnicos",
-        "projectPath": "/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/GestionTecnicos.csproj",
-        "packagesPath": "/home/victor/.nuget/packages/",
-        "outputPath": "/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/",
+        "projectPath": "/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/GestionTecnicos.csproj",
+        "packagesPath": "/var/home/victor/.nuget/packages/",
+        "outputPath": "/var/home/victor/RiderProjects/GestionTecnicos/GestionTecnicos/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/victor/.nuget/NuGet/NuGet.Config"
+          "/var/home/victor/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/lib64/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,21 +38,29 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[9.0.1, )"
+              "version": "[9.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.1, )"
+              "version": "[9.0.10, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.6, )"
             }
           },
           "imports": [
@@ -75,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/var/home/victor/.dotnet/sdk/9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
