@@ -1,0 +1,44 @@
+[
+  {
+    "ContainingType": "SistemasApi2.Controllers.SistemasController",
+    "Method": "GetAll",
+    "RelativePath": "api/Sistemas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemasApi2.Controllers.SistemasController",
+    "Method": "Create",
+    "RelativePath": "api/Sistemas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sistema",
+        "Type": "GestionTecnicos.Models.Sistemas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SistemasApi2.Controllers.SistemasController",
+    "Method": "GetById",
+    "RelativePath": "api/Sistemas/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
